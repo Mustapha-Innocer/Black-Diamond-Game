@@ -1,6 +1,7 @@
 package io.turntabl.blackDiamondGame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck {
@@ -20,5 +21,9 @@ public class Deck {
 
     public List<Card> getCards() {
         return cards;
+    }
+
+    public void shuffle(){
+        Collections.shuffle(cards);
     }
 }
