@@ -9,7 +9,7 @@ public class Player {
     List<Card> cards = new ArrayList<>();
 
     public int total (){
-        return cards.stream().map(c -> c.value()).reduce(Integer::sum).get();
+        return cards.stream().map(c -> c.getValue()).reduce(Integer::sum).get();
     }
 
     public void collect(Card card){

@@ -16,6 +16,21 @@ class JunitTest {
     void cardValueTest(){
         Card card = new Card(Suit.CLUB, Label.QUEEN);
         int expected_value = 10;
-        Assert.assertEquals(expected_value, card.value() );
+        Assert.assertEquals(expected_value, card.getValue() );
+    }
+
+    @Test
+    void dealCardTest(){
+        Deck deck = new Deck();
+        Card expectedCard = deck.getCards().get(0);
+        Assert.assertEquals(expectedCard, deck.dealCard());
+    }
+
+    @Test
+    void cardsLeftAfterDealTest(){
+        Deck deck = new Deck();
+        deck.dealCard();
+        int expected = 51;
+        Assert.assertEquals(expected, deck.getCards().size());
     }
 }

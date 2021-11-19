@@ -8,7 +8,7 @@ public class Card {
         this.suit =suit;
         this.label = label;
     }
-    int value(){
+    int getValue(){
         return label.getValue();    }
 
     @Override
