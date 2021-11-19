@@ -1,19 +1,13 @@
 package io.turntabl.blackDiamondGame;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        Deck deck = new Deck();
-//        System.out.println(deck.getCards());
-//        System.out.println(deck.getCards());
-
-//        Player player1 = new Player();
-//        Player player2 = new Player();
-//        Player player3 = new Player();
-//        deck.shuffle();
-
-
-
-//        System.out.println(player.total());
-
+       Game newGame = new Game();
+       newGame.start();
+//       List<Player> palyers = new ArrayList<>();
+//       newGame.goBust();
     }
 }

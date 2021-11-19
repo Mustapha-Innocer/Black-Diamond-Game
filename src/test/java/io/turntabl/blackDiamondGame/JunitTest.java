@@ -47,6 +47,13 @@ class JunitTest {
         int expectedValue = 2;
         Assert.assertEquals(expectedValue,player.getCards().size());
     }
+    @Test
+    public void collectTest2(){
+        player.collect(deck.dealCard(),deck.dealCard());
+        player.collect(deck.dealCard());
+        int expectedValue = 3;
+        Assert.assertEquals(expectedValue,player.getCards().size());
+    }
 
     @Test
     public void correctSummingCardValues(){

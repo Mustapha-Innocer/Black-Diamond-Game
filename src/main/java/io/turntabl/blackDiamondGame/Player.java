@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Player {
     private int id;
+    private Status status = Status.HIT;
 
     public Player(int id) {
         this.id = id;
@@ -27,5 +28,24 @@ public class Player {
 
     public List<Card> getCards() {
         return cards;
+    }
+    public void updateStatus(Status status){
+        this.status = status;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                " Total " + total() +
+                '}';
     }
 }
