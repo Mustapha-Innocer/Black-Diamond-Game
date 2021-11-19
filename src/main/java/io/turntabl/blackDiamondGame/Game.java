@@ -1,12 +1,27 @@
 package io.turntabl.blackDiamondGame;
 
-public class Game {
-    public void start(){
-        Deck deck = new Deck();
-        deck.shuffle();
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
-        Player player1 = new Player();
-        Player player3= new Player();
-        Player player2 = new Player();
+public class Game {
+    private  Deck deck;
+    private List<Player> players;
+    public Game() {
+        deck = new Deck();
+        players = List.of(new Player(1), new Player(2), new Player(3));
+        deck.shuffle();
+    }
+
+    public void start(){
+        initialDeal();
+
+    }
+
+    public void initialDeal(){
+        for (Player player: players){
+            player.collect(deck.dealCard(),deck.dealCard());
+        }
+
     }
 }
