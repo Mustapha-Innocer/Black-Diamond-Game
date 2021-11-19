@@ -2,6 +2,8 @@ package io.turntabl.blackDiamondGame;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.Scanner;
+
 
 public class Game {
     private  Deck deck;
@@ -12,9 +14,26 @@ public class Game {
     public Game() {
         deck = new Deck();
         players = new ArrayList<>();
-        players.addAll(Arrays.asList(new Player(1), new Player(2), new Player(3)));
+//        players.addAll(Arrays.asList(new Player(1), new Player(2), new Player(3)));
+        createPlayers();
         deck.shuffle();
         strategy = new Strategy(deck);
+    }
+
+    public void createPlayers(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of players to create: ");
+        int numberOfPlayer = sc.nextInt();
+
+        if (numberOfPlayer > 6 || numberOfPlayer < 1){
+            System.out.println("Player less than 1 or greater than 6 can't be created " +
+                    "\nThe default number of player is now 3" +
+                    "\n----------------------------------");
+            numberOfPlayer = 3;
+        }
+        for (int i = 0; i < numberOfPlayer; i++){
+            players.add(new Player(i+1));
+        }
     }
 
     public void start(){
